@@ -1,1 +1,0 @@
-# DanielTed23.github.io
