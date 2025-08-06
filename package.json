@@ -1,5 +1,5 @@
 {
-  "name": "mit-projekt",
+  "name": "danielted23.github.io",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -27,7 +27,7 @@
     "@angular/forms": "^20.1.0",
     "@angular/platform-browser": "^20.1.0",
     "@angular/platform-server": "^20.1.0",
-    "@angular/router": "^20.1.0",
+    "@angular/router": "^20.1.4",
     "@angular/ssr": "^20.1.4",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
