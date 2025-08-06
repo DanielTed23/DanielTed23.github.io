@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '.',
+  basePath: '/DanielTed23.github.io',
   supportedLocales: {
   "en-US": ""
 },
