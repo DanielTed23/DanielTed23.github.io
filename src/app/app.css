@@ -1,0 +1,106 @@
+/* Root-elementet (hvis det bruges i fx et Web Component eller Shadow DOM) */
+:host {
+  display: block; /* Sørger for at elementet opfører sig som en block */
+  min-height: 100dvh; /* Minimumshøjde er 100% af viewport-højden – sikrer fuld skærmhøjde */
+  background: transparent; /* Gør baggrunden gennemsigtig – så styles.css baggrund kan ses */
+  color: inherit; /* Arver tekstfarven fra det omgivende element */
+}
+
+/* Header-containeren på siden */
+.site-header {
+  display: flex; /* Brug flexbox til layout */
+  justify-content: center; /* Centrerer indholdet horisontalt */
+  align-items: center; /* Centrerer indholdet vertikalt */
+  text-align: center; /* Centrerer tekstindholdet */
+  padding-top: 65px; /* Tilføjer luft over headeren – justér som ønsket */
+  position: relative;
+   min-height: 150px; /* så der er plads til ikoner og indhold */
+}
+
+/* Overskriften i headeren */
+.site-header h1 {
+  margin: 0; /* Fjerner standardafstand omkring overskriften */
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; /* Moderne sans-serif skrifttype med fallback */
+  font-weight: 700; /* Kraftig men ikke overdreven skrift (bold) */
+  letter-spacing: 0; /* Ingen ekstra afstand mellem bogstaver */
+  line-height: 1.1; /* Tæt linjeafstand for en kompakt overskrift */
+  color: rgb(255, 255, 255); /* Hvid tekstfarve */
+
+}
+
+/* Knap til e-mail kontakt */
+.email-button {
+  display: inline-block; /* Opfører sig som en knap i en linje */
+  padding: 8px 16px; /* Indvendig afstand (top/bund og sider) */
+  border: 2px solid #1976d2; /* Blå kant */
+  border-radius: 6px; /* Let afrundede hjørner */
+  color: #1976d2; /* Blå tekst */
+  text-decoration: none; /* Fjerner understregning */
+  font-weight: 500; /* Halvfed tekst */
+  transition: all 0.2s ease; /* Blød overgang ved hover */
+  margin-top: 24px; /* Luft over knappen */
+}
+
+/* Hover-effekt for e-mail knappen */
+.email-button:hover {
+  background-color: #1976d2; /* Gør baggrunden blå ved hover */
+  color: white; /* Skift tekstfarve til hvid ved hover */
+  cursor: pointer; /* Skift cursoren til en hånd, så det ligner en knap */
+}
+
+/* Placer ikonerne i øverste højre hjørne */
+.social-links {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Fælles ikon-stil */
+.social-links img {
+  width: 32px;
+  height: 32px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Kun GitHub inverteres for at blive hvid */
+.github-icon {
+  filter: invert(100%);
+}
+
+/* Hover-effekt */
+.social-links img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;             /* skjul alt udenfor "boksen" */
+  white-space: nowrap;          /* skriv på én linje */
+  border-right: 2px solid white; /* blinkende "cursor" */
+  animation:
+    typing 3s steps(30, end),
+    blink-caret 0.7s step-end infinite;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: white;
+   padding: 0 8px; /* lidt luft i siderne */
+  
+}
+
+/* Selve skrivningen */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Cursor-blink */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
