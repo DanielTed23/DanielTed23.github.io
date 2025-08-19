@@ -1,0 +1,431 @@
+/* Root-elementet (hvis det bruges i fx et Web Component eller Shadow DOM) */
+:host {
+  display: block; /* Sørger for at elementet opfører sig som en block */
+  min-height: 100dvh; /* Minimumshøjde er 100% af viewport-højden – sikrer fuld skærmhøjde */
+  background: transparent; /* Gør baggrunden gennemsigtig – så styles.css baggrund kan ses */
+  color: inherit; /* Arver tekstfarven fra det omgivende element */
+}
+
+/* Header-containeren på siden */
+.site-header {
+  display: flex; /* Brug flexbox til layout */
+  justify-content: center; /* Centrerer indholdet horisontalt */
+  align-items: center; /* Centrerer indholdet vertikalt */
+  text-align: center; /* Centrerer tekstindholdet */
+  padding-top: 65px; /* Tilføjer luft over headeren – justér som ønsket */
+  position: relative;
+   min-height: 150px; /* så der er plads til ikoner og indhold */
+}
+
+/* Overskriften i headeren */
+.site-header h1 {
+  margin: 0; /* Fjerner standardafstand omkring overskriften */
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; /* Moderne sans-serif skrifttype med fallback */
+  font-weight: 700; /* Kraftig men ikke overdreven skrift (bold) */
+  letter-spacing: 0; /* Ingen ekstra afstand mellem bogstaver */
+  line-height: 1.1; /* Tæt linjeafstand for en kompakt overskrift */
+  color: rgb(255, 255, 255); /* Hvid tekstfarve */
+
+}
+
+
+
+
+
+
+
+/* Fælles ikon-stil */
+.social-links img {
+  width: 32px;
+  height: 32px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Kun GitHub inverteres for at blive hvid */
+.github-icon {
+  width: 24px;
+  height: 24px;
+  transition: filter 0.3s ease;
+}
+
+
+/* Hover-effekt */
+.social-links img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+  padding-bottom: 4px;
+  animation:
+    typing 3s steps(30, end),
+    blink-caret 0.7s step-end infinite;
+
+  color: black;
+  border-right: 2px solid black;
+}
+
+/* Selve skrivningen */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Cursor-blink */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+
+
+
+.theme-toggle-wrapper {
+  position: fixed;
+  top: 19px;
+  right: 104px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+
+/* Sol-ikon (bare cirkel med stråler som på dit billede) */
+.icon-sun {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 0.3s ease;
+
+  /* Light mode (sort sol) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 24 24'%3E%3Cpath d='M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.8 1.8-1.8zm10.48 0l1.79-1.79 1.79 1.79-1.8 1.8-1.78-1.8zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zm8-8h3v-1h-3v1zm-19 0v-1H1v1h3zm16.24 6.16l1.8 1.79 1.79-1.79-1.8-1.8-1.79 1.8zM4.84 17.24l-1.79 1.8 1.79 1.79 1.8-1.79-1.8-1.8zM12 6a6 6 0 100 12 6 6 0 000-12z'/%3E%3C/svg%3E");
+}
+
+/* Toggle switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: -2px;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  background-color: #a7a6a6;
+  transition: 0.4s;
+  border-radius: 20px;
+  
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #4e4e4e;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #ffffff;
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+.sun-icon {
+    margin-top: -7px; /* 🔼 Skub ned – negativt tal skubber op */
+  width: 40px;
+  height: 40px;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  color: #000;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.contact-box {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 24px;
+  border-radius: 10px;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s;
+
+  
+}
+
+.contact-box h2 {
+  margin-bottom: 16px;
+  text-align: center;
+  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: white;
+  color: black;
+  resize: none;
+}
+
+.form-send-knap {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff; /* blå i light mode */
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.form-send-knap:hover {
+  background-color: #0069d9;
+  transform: scale(1.03);
+}
+
+.form-send-knap:active {
+  transform: scale(0.98);
+}
+
+
+
+/* DARK MODE støtte */
+body.dark-mode .contact-box {
+  --bg-color: #1e1e1e;
+  --text-color: #f1f1f1;
+}
+body:not(.dark-mode) .contact-box {
+  --bg-color: #f9f9f9;
+  --text-color: #111;
+}
+
+.site-nav {
+  display: flex;
+  gap: 12px;
+  padding: 12px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.site-nav button {
+  padding: 6px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.site-nav button:hover {
+  background-color: #cfcfcf;
+}
+
+.site-nav .active {
+  background-color: #007bff;
+  color: white;
+}
+
+
+
+
+.center-knap-wrapper {
+  display: flex;
+  justify-content: center; /* centrerer vandret */
+  margin-top: 2rem; /* juster afstand fra top */
+}
+
+.knap {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background-color: #111;  /* sort knap i light mode */
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.knap:hover {
+  background-color: #333;
+  transform: scale(1.03);
+}
+
+.knap:active {
+  transform: scale(0.98);
+}
+
+
+
+
+.skills-box {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 24px;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.skill-category {
+  margin-bottom: 32px;
+}
+
+.skill-category h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.skills-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-box li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.skill-icon {
+  width: 30px;
+  height: 32px;
+  margin-right: 10px;
+  filter: var(--icon-filter); /* dark/light theme */
+}
+
+
+
+.skill-category a {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.skill-category a:hover {
+  color: #0056b3;
+}
+
+.top-fixed-icons {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1001;
+}
+
+.github-icon {
+ margin-top: 2px;
+    margin-right: 12px;
+}
+
+.linkedin-icon {
+  margin-top: -13px;
+  margin-right: 0px;
+}
+
+
+
+.side-by-side-sections {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 450px;
+  flex-wrap: wrap; /* Så de stacker på mobil */
+  padding: 2rem 1rem;
+}
+
+.contact-box,
+.skills-box {
+  flex: 1 1 450px;
+  max-width: 600px;
+}
+
+/* Responsive: stack på mobil */
+@media (max-width: 768px) {
+  .side-by-side-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-box,
+  .skills-box {
+    width: 100%;
+    max-width: 600px;
+  }
+}

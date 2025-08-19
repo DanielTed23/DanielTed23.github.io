@@ -6,10 +6,143 @@
 }
 
 html, body {
-  height: 100%;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   background-color: #212529;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  padding-bottom: 60px; /* eller lidt mere, hvis footeren er højere */
+}
+
+main {
+  flex: 1; /* Dette får indholdet til at fylde alt "mellemrum" mellem header og footer */
+}
+
+
+/* ✨ LIGHT MODE (default) */
+body:not(.dark-mode) {
+  background-color: #f2f2f2;
+  color: #000000;
+}
+
+
+/* 📱 LIGHT MODE — Telefon Dropdown */
+body:not(.dark-mode) .iti__country-list {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ccc !important;
+}
+
+body:not(.dark-mode) .iti__country {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body:not(.dark-mode) .iti__country:hover,
+body:not(.dark-mode) .iti__highlight {
+  background-color: #f0f0f0 !important;
+  color: #000000 !important;
+}
+
+body:not(.dark-mode) .iti__country-name {
+  color: #000000 !important;
+}
+
+body:not(.dark-mode) .iti__search-input {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #ccc !important;
+}
+
+
+/* 🌙 DARK MODE */
+body.dark-mode {
+  background-color: #212529;
+  color: #ffffff;
+}
+
+
+
+/* 📱 DARK MODE — Telefon Dropdown */
+body.dark-mode .iti__country-list {
+  background-color: #2b2b2b !important;
+  color: #ffffff !important;
+  border: 1px solid #444 !important;
+}
+
+body.dark-mode .iti__country {
+  background-color: #2b2b2b !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .iti__country:hover,
+body.dark-mode .iti__highlight {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .iti__country-name {
+  color: #ffffff !important;
+}
+
+body.dark-mode .iti__search-input {
+  background-color: #1e1e1e !important;
+  color: white !important;
+  border: 1px solid #555 !important;
+}
+
+body.dark-mode .github-icon {
+  filter: invert(1);
+}
+
+body.dark-mode .icon-sun {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.8 1.8-1.8zm10.48 0l1.79-1.79 1.79 1.79-1.8 1.8-1.78-1.8zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zm8-8h3v-1h-3v1zm-19 0v-1H1v1h3zm16.24 6.16l1.8 1.79 1.79-1.79-1.8-1.8-1.79 1.8zM4.84 17.24l-1.79 1.8 1.79 1.79 1.8-1.79-1.8-1.8zM12 6a6 6 0 100 12 6 6 0 000-12z'/%3E%3C/svg%3E");
+}
+
+body.dark-mode .typewriter {
+  color: white;
+  border-right: 2px solid white;
+}
+
+body.dark-mode .site-footer {
+  background-color: #212529;
+  color: #ffffff;
+  box-shadow: 0 -2px 5px rgba(54, 52, 52, 0.2);
+}
+
+
+/* Dark mode */
+body.dark-mode .site-nav button {
+  background-color: #444;
+  color: white;
+}
+
+body.dark-mode .site-nav button:hover {
+  background-color: #555;
+}
+
+body.dark-mode .site-nav .active {
+  background-color: #2196F3;
+}
+
+
+body.dark-mode .knap {
+  background-color: #fff;
+  color: #111;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .knap:hover {
+  background-color: #e6e6e6;
 }

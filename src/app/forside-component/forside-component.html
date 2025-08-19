@@ -1,0 +1,121 @@
+<header class="site-header">
+  <div class="top-fixed-icons">
+    <!-- Theme toggle -->
+    <div class="theme-toggle-wrapper" (click)="toggleDarkMode()">
+      <label class="switch">
+        <input type="checkbox" [checked]="isDarkMode" (change)="toggleDarkMode()" />
+        <span class="slider"></span>
+      </label>
+      <img [src]="isDarkMode ? 'assets/icons/hcidsol.svg' : 'assets/icons/sun2.svg'" alt="Sol" class="sun-icon" />
+    </div>
+
+    <!-- Social links -->
+    <div class="social-links">
+      <a href="https://github.com/DanielTed23" target="_blank" aria-label="GitHub">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="github-icon" />
+      </a>
+      <a href="https://dk.linkedin.com/in/daniel-villena-askgaard-338524174" target="_blank" aria-label="LinkedIn">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="linkedin-icon" />
+      </a>
+    </div>
+  </div>
+
+  <div class="header-content">
+    <h1><span class="typewriter"></span></h1>
+  </div>
+</header>
+
+<div class="center-knap-wrapper">
+  <button [routerLink]="['/om']" class="knap om" routerLinkActive="active">Om</button>
+</div>
+
+<div class="side-by-side-sections">
+  <section class="contact-box" id="kontakt">
+    <h2>Kontakt mig</h2>
+    <form action="mailto:daniel2003@outlook.dk" method="POST" enctype="text/plain">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">Fornavn</label>
+          <input type="text" id="firstName" name="Fornavn" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Efternavn</label>
+          <input type="text" id="lastName" name="Efternavn" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="Email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefon</label>
+          <input type="tel" id="phone" name="Telefon" />
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="message">Besked</label>
+        <textarea id="message" name="Besked" rows="4" required></textarea>
+      </div>
+
+      <button type="submit" class="form-send-knap">Send</button>
+    </form>
+  </section>
+
+  <section class="skills-box">
+    <h2>Skills</h2>
+
+    <div class="skill-category">
+      <h3>Front End</h3>
+      <ul>
+        <li><img src="assets/icons/HTML.svg.png" alt="HTML" class="skill-icon" /> <a href="assets/certs/html-certifikat.pdf" target="_blank">HTML</a></li>
+        <li><img src="assets/icons/CSS3.png" alt="CSS" class="skill-icon" /> <a href="assets/certs/css-certifikat.pdf" target="_blank">CSS</a></li>
+        <li><img src="assets/icons/Bootstrapsvg.png" alt="Bootstrap" class="skill-icon" /> Bootstrap 5</li>
+        <li><img src="assets/icons/JSON.svg.png" alt="JSON" class="skill-icon" /> JSON</li>
+        <li><img src="assets/icons/xml.svg" alt="XML" class="skill-icon" /> XML</li>
+        <li><img src="assets/icons/Angular.png" alt="Angular" class="skill-icon" /> Angular</li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h3>Back End</h3>
+      <ul>
+        <li><img src="assets/icons/Csharp.png" alt="C#" class="skill-icon" /> <a href="assets/certs/csharp-certifikat.pdf" target="_blank">C#</a></li>
+        <li><img src="assets/icons/entity-framework.png" alt="Entity Framework" class="skill-icon" /> Entity Framework</li>
+        <li><img src="assets/icons/dependency-injection.png" alt="Dependency Injection" class="skill-icon" /> Dependency Injection</li>
+        <li><img src="assets/icons/mssql.png" alt="MS SQL" class="skill-icon" /> MS SQL</li>
+        <li><img src="assets/icons/postman-icon.svg" alt="Postman" class="skill-icon" /> Postman</li>
+        <li><img src="assets/icons/python.png" alt="Python" class="skill-icon" /> Python</li>
+       
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h3>DevOps & Tools</h3>
+      <ul>
+        <li><img src="assets/icons/git.png" alt="Git" class="skill-icon" /> Git</li>
+        <li><img src="assets/icons/docker.png" alt="Docker" class="skill-icon" /> Docker</li>
+        <li><img src="assets/icons/Swaggerlogo.png" alt="Swagger" class="skill-icon" /> Swagger</li>
+        <li><img src="assets/icons/Azure.svg.png" alt="Azure" class="skill-icon" /> Azure</li>
+      </ul>
+    </div>
+
+    <div class="skill-category">
+      <h3>Frameworks & Tools</h3>
+      <ul>
+        <li><img src="assets/icons/Blazor.png" alt="Blazor" class="skill-icon" /> Blazor</li>
+        <li><img src="assets/icons/maui.png" alt="MAUI" class="skill-icon" /> MAUI</li>
+        <li><img src="assets/icons/Android.png" alt="Android Studio" class="skill-icon" /> Android Studio</li>
+        <li><img src="assets/icons/Arduino.png" alt="Arduino" class="skill-icon" /> Arduino</li>
+        <li><img src="assets/icons/Photoshop.png" alt="Photoshop" class="skill-icon" /> Photoshop</li>
+        <li><img src="assets/icons/unity.png" alt="Unity" class="skill-icon" /> Unity</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  © 2025 Daniel Villena Askgaard
+</footer>
